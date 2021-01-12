@@ -37,63 +37,87 @@
 }
 
 .prev, .next {
-	cursor: pointer;
 	position: absolute;
 	top: 50%;
 	width: auto;
 	padding: 16px;
 	margin-top: -22px;
-	color: #494B55;
 	font-weight: bold;
 	font-size: 18px;
 	transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
 }
 
 .next {
-  border-bottom: 6px solid;
-  border-left: 6px solid;
   right: 2vw;
-  transform: scaleX(-1) rotate(45deg);
+  transform: scaleX(-1);
 }
 
 .prev {
-  border-bottom: 6px solid;
-  border-left: 6px solid;
-  transform: rotate(45deg);
   left: 2vw;
 }
 
 .prev:hover, .next:hover,
 .prev:focus, .next:focus {
-  color: #bbb;
   text-decoration: none;
-  cursor: pointer;
   transition: 0.3s;
 }
 
-.arrows .tooltiptext {
-  width: 120px;
-  background-color: transparent;
+.arrow {
+  border-bottom: 6px solid;
+  border-left: 6px solid;
+  width: 30px;
+  height: 30px;
   color: #fff;
   text-align: center;
   padding: 5px 0;
   border-radius: 3px;
   position: absolute;
   z-index: 1;
-  top: -80px;
-  left: 105%;
-  transform: rotate(-45deg);
-  opacity: 0;
+  transform: rotate(45deg);
   transition: opacity 1s;
+  top: 35px;
+  left: 40px;
 }
 
-#righttooltip{
-  transform: scaleX(-1) rotate(45deg);
+.nav-button {
+  height: 70px;
+  width: 70px;
+  background-color: #40404040;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
 }
 
-.arrows:hover .tooltiptext {
+.nav-button:hover {
+  background-color: #3b89e3;
+  transition: 0.6s ease;
+}
+
+.tooltiptext {
+    width: 70px;
+    background-color: #40404040;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: 40px;
+    opacity: 0;
+    /* transition: opacity 0.3s; */
+    /* transition-delay: 0.5s; */
+    bottom: 40px;
+    font-size: 14px;
+}
+
+.nav-button:hover + .tooltiptext {
   opacity: 1;
+}
+
+#tooltipnext {
+  transform: scaleX(-1);
 }
 
 @media only screen and (max-width: 700px){

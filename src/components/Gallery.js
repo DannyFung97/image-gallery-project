@@ -35,11 +35,17 @@ const Gallery = () => {
         <div>
             <div id="myModal" className="modal">
                 <div className="slideshow-options">
-                    <span className="arrows prev" onClick={() => slideNav(false)}>
-                        <span class="tooltiptext" id="lefttooltip">Previous</span>
+                    <span className="prev">
+                        <span className="nav-button" onClick={() => slideNav(false)}>
+                            <span className="arrow" />
+                        </span>
+                        <span className="tooltiptext" id="tooltipprev">Previous</span>
                     </span>
-                    <span className="arrows next" onClick={() => slideNav(true)}>
-                        <span class="tooltiptext" id="righttooltip">Next</span>
+                    <span className="next">
+                        <span className="nav-button" onClick={() => slideNav(true)}>
+                            <span className="arrow" />
+                        </span>
+                        <span className="tooltiptext" id="tooltipnext">Next</span>
                     </span>
                 </div>
                 <div className="img-container" id="img-container">
