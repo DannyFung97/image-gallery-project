@@ -7,14 +7,11 @@
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
-  background-color: rgb(0,0,0);
   background-color: rgba(0,0,0,0.9);
 }
 
 .img-container {
   text-align: center;
-  margin: 10px;
   width: 80vw;
   height: 90vh;
   line-height: 90vh;
@@ -23,12 +20,13 @@
   margin-right: auto;
   animation-name: zoom;
   animation-duration: 0.3s;
+  /* border: 10px solid; */
+  position: relative;
 }
 
 #img-on-display {
   max-width:100%;
   max-height:100%;
-  vertical-align: middle;
 }
 
 @keyframes zoom {
@@ -37,14 +35,76 @@
 }
 
 .prev, .next {
-	position: absolute;
+	position: fixed;
 	top: 50%;
 	width: auto;
 	padding: 16px;
 	margin-top: -22px;
-	font-weight: bold;
-	font-size: 18px;
 	transition: 0.6s ease;
+}
+
+.zoom-options {
+  position: fixed;
+  transition: 0.6s ease;
+  top: 90%;
+  left: 50%;
+}
+
+.zoom-out-button {
+  margin-left: -100px;
+}
+
+.zoom-in-button {
+  margin-left: 70px;
+}
+
+.h-line {
+  border-bottom: 0.01em solid #fff;
+  position: absolute;
+  width: 20px;
+  text-align: center;
+  left: 5px;
+  top: 15px;
+}
+
+.v-line {
+  position: absolute;
+  height: 20px;
+  text-align: center;
+  left: 14px;
+  top: 5px;
+  border-left: 0.01em solid #fff;
+}
+
+.magnifying-glass
+{
+ font-size: 5em; /* This controls the size. */
+ display: inline-block;
+ width: 0.4em;
+ height: 0.4em;
+ border: 0.01em solid #fff;
+ position: relative;
+ border-radius: 0.35em;
+ top: 15px;
+left: 15px;
+}
+
+.magnifying-glass::before
+{
+ content: "";
+ display: inline-block;
+ position: absolute;
+ right: -0.15em;
+ bottom: -0.05em;
+ border-width: 0;
+ border-radius: 3px;
+ background: #fff;
+ width: 0.2em;
+ height: 0.04em;
+ -webkit-transform: rotate(45deg);
+ -moz-transform: rotate(45deg);
+ -ms-transform: rotate(45deg);
+ -o-transform: rotate(45deg);
 }
 
 .next {
@@ -71,12 +131,11 @@
   text-align: center;
   padding: 5px 0;
   border-radius: 3px;
-  position: absolute;
-  z-index: 1;
   transform: rotate(45deg);
   transition: opacity 1s;
   top: 35px;
   left: 40px;
+  position: absolute;
 }
 
 .nav-button {
@@ -94,30 +153,53 @@
 }
 
 .tooltiptext {
-    width: 70px;
-    background-color: #40404040;
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: 40px;
-    opacity: 0;
-    /* transition: opacity 0.3s; */
-    /* transition-delay: 0.5s; */
-    bottom: 40px;
-    font-size: 14px;
+  width: 70px;
+  background-color: #40404040;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s;
+	font-weight: bold;
+  font-size: 14px;
+}
+
+.h-tooltip {
+  left: 50%;
+  margin-left: 40px;
+  bottom: 40px;
+}
+
+.v-tooltip {
+  bottom: 110%;
+  left: 25%;
+}
+
+#tooltipzoomout, #tooltipzoomin {
+  position: absolute;
+}
+
+#tooltipzoomin {
+  left: 40px;
+}
+
+#tooltipzoomout {
+  left: -100px;
 }
 
 .nav-button:hover + .tooltiptext {
   opacity: 1;
 }
 
+#tooltipprev {
+  position: absolute;
+}
+
 #tooltipnext {
   transform: scaleX(-1);
+  position: absolute;
 }
 
 @media only screen and (max-width: 700px){
