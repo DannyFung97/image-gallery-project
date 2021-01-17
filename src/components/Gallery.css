@@ -33,7 +33,7 @@ body {
 
 .image-grid .img-hover:hover {
   transform: scale(1.03);
-  border: solid 5px #3b89e3;
+  border: solid 5px #0476bd;
 }
 
 .image-grid .img-hover img:hover {

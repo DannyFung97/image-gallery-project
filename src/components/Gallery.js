@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 // import Slideshow from "./Slideshow.js"
 import useGallery from "../hooks/useGallery"
-import getTranslateValues from "../hooks/getTranslateValues"
 import $ from "jquery";
 import "./Gallery.css"
 import './Slideshow.css'
