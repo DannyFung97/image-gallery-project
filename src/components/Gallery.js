@@ -18,46 +18,48 @@ const Gallery = () => {
     var offSetDragX = 0;
     var offSetDragY = 0;
 
-    window.addEventListener('mousedown', e => {
-        e.preventDefault();
-        initialDragX = e.clientX - offSetDragX;
-        initialDragY = e.clientY - offSetDragY;
-        if (e.target == document.getElementById('img-on-display')) {
-            document.getElementById('img-on-display').style.transition = 'none';
-            if(imageScale != 1){
-                isDragging = true;
-            }
-        }
-        if (e.target == document.getElementById('myModal') || e.target == document.getElementById('img-container')) {
-            document.getElementById('myModal').style.display = "none";
-            document.getElementsByTagName("BODY")[0].classList.remove("modal-open");
-            imageScale = 1;
-            document.getElementById('img-on-display').style.transform = `scale(1)`
-        }
-    });
-
-    window.addEventListener('mousemove', e => {
-        if (isDragging) {
+    if (typeof window !== `undefined`) {
+        window.addEventListener('mousedown', e => {
             e.preventDefault();
-            var img = document.getElementById('img-on-display')
-            currDragX = (e.clientX - initialDragX)
-            currDragY = (e.clientY - initialDragY)
-            offSetDragX = currDragX;
-            offSetDragY = currDragY;
-            console.log(currDragX, currDragY)
-            img.style.transform = "translate3d(" + currDragX + "px, " + currDragY + "px, 0) scale(" + imageScale + ")";
-        }
-    });
+            initialDragX = e.clientX - offSetDragX;
+            initialDragY = e.clientY - offSetDragY;
+            if (e.target == document.getElementById('img-on-display')) {
+                document.getElementById('img-on-display').style.transition = 'none';
+                if (imageScale != 1) {
+                    isDragging = true;
+                }
+            }
+            if (e.target == document.getElementById('myModal') || e.target == document.getElementById('img-container')) {
+                document.getElementById('myModal').style.display = "none";
+                document.getElementsByTagName("BODY")[0].classList.remove("modal-open");
+                imageScale = 1;
+                document.getElementById('img-on-display').style.transform = `scale(1)`
+            }
+        });
 
-    window.addEventListener('mouseup', e => {
-        initialDragX = currDragX;
-        initialDragY = currDragY;
-        isDragging = false;
-    });
+        window.addEventListener('mousemove', e => {
+            if (isDragging) {
+                e.preventDefault();
+                var img = document.getElementById('img-on-display')
+                currDragX = (e.clientX - initialDragX)
+                currDragY = (e.clientY - initialDragY)
+                offSetDragX = currDragX;
+                offSetDragY = currDragY;
+                console.log(currDragX, currDragY)
+                img.style.transform = "translate3d(" + currDragX + "px, " + currDragY + "px, 0) scale(" + imageScale + ")";
+            }
+        });
 
-    window.addEventListener('mouseleave', e => {
-        isDragging = false;
-    });
+        window.addEventListener('mouseup', e => {
+            initialDragX = currDragX;
+            initialDragY = currDragY;
+            isDragging = false;
+        });
+
+        window.addEventListener('mouseleave', e => {
+            isDragging = false;
+        });
+    }
 
     const fullImage = i => {
         var modal = document.getElementById("myModal");
@@ -77,10 +79,10 @@ const Gallery = () => {
         else if (!zoomIn && (imageScale / 2 >= 1)) {
             imageScale /= 2;
             img.style.transition = '0.2s ease';
-            if(imageScale == 1){
+            if (imageScale == 1) {
                 img.style.transform = `scale(${imageScale})`
             }
-            else{
+            else {
                 img.style.transform = `translate3d(${currDragX}px, ${currDragY}px, 0) scale(${imageScale})`
             }
         }
