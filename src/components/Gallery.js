@@ -145,7 +145,7 @@ const Gallery = () => {
                 {images.map((image, index) => (
                     <div className="image-item" key={`${index}-cl`}>
                         <div className="img-hover">
-                            <img className="gallery-img" src={image.node.secure_url} alt={"no alt :("} onClick={() => fullImage(index)} />
+                            <img className="gallery-img" src={image.node.secure_url.replace('q_auto,f_auto', 'w_0.6,c_scale')} alt={"no alt :("} onClick={() => fullImage(index)} />
                         </div>
                     </div>
                 ))}
