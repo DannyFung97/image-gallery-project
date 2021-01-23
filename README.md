@@ -8,4 +8,4 @@
 
 ![](/screenshots/Slideshow.png)
 
-### To see the app, visit www.dannygallery.cloud or the subdomain: dannygatsbyimages.netlify.app
+### To see the app, visit www.dannygallery.cloud or the subdomain: dannygallery.netlify.app
