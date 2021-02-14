@@ -1,0 +1,75 @@
+.square-container {
+    margin: 0 auto;
+}
+
+.section {
+    padding: .5rem;
+}
+
+.square {
+    float:left;
+    position: relative;
+    width: 24.6%;
+    padding-bottom: 24.6%;
+    margin: .2%;
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    border: solid .4rem white;
+    transition: transform .2s;
+}
+
+.square:hover {
+    transform: scale(1.03);
+    border: solid .4rem #059cfa;
+}
+
+.modal-img {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s;
+}
+
+@media only screen and (max-width: 992px) {
+    .square {
+        width: 33%;
+        padding-bottom: 33%;
+        margin: .16%;
+        border: none;
+    }
+    .section {
+        padding: 0 !important;
+    }
+}
+
+/* @media only screen and (min-width: 600px) and (max-width: 992px) {
+    .square {
+        width: 48%;
+        padding-bottom: 48%;
+        margin: .5%;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .square {
+        width: 30%;
+        padding-bottom: 30%;
+        margin: 1.66%;
+    }
+  }
+
+@media only screen and (min-width: 1200px) and (max-width: 1920px) {
+    .square {
+        width: 23%;
+        padding-bottom : 23%;
+        margin: 1%;
+    }
+} */
+
+@media only screen and (min-width: 1920px) {
+  .square-container {
+      max-width: 1920px;
+  }
+}

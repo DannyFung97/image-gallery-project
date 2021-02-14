@@ -1,13 +1,14 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from '../components/Header';
-import Gallery from '../components/Gallery';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Header from "../components/BulmaHeader";
+import Gallery from "../components/BulmaGallery";
+import "bulma/css/bulma.css";
 
-export default () => {    
-    return (
-      <>
-        <Header />
-        <Gallery />
-      </>        
-    )    
-}
+export default () => {
+  return (
+    <>
+      <Header />
+      <Gallery />
+    </>
+  );
+};

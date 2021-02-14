@@ -1,0 +1,57 @@
+#hero {
+    text-align: center;
+    color: white;
+    background-image: url(../assets/sf.png);
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border-bottom: .2rem solid #059cfa;
+}
+
+.is-custom-background-color {
+    background-color: #059cfa;
+}
+
+.is-custom-color {
+    color: #059cfa;
+}
+
+.text-custom-color {
+    color: white !important;
+}
+
+.shadowed-twice {
+    background-color: rgb(0, 0, 0, .6);
+}
+
+.shadowed {
+    background-color: rgb(0, 0, 0, .3);
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.button {
+    transition: .2s;
+    background-color: #059cfa !important;
+    color: white !important;
+    border-color: #059cfa !important;
+}
+
+.button:hover {
+    background-color: #0476bd !important;
+    /* color: white !important; */
+    border-color: #0476bd !important;
+    transform: scale(1.2);
+}
+
+.navbar-burger {
+    color: white !important;
+}
+
+.navbar-menu {
+    background-color: transparent !important;
+}
